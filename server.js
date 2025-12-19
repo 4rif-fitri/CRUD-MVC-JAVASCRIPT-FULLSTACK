@@ -1,6 +1,9 @@
 let port = 3025;
 let express = require("express");
 let server = express(); //panggail func dalam modul express
+let heroController = require("./controller/hero.controller");
+
+server.use("/", heroController);
 
 server.use("/", (request, respone) => {
   respone.send("Server JS ON!!!");
